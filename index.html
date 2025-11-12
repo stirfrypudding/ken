@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>In Loving Memory of Ture Kenneth Gustafson</title>
+  <style>
+    :root{
+      --ink:#222;
+      --paper:#fff;
+      --band-a:#1d2940;
+      --band-b:#2b3c60;
+      --maxw: 70ch;        /* comfortable reading width */
+    }
+
+    /* Base */
+    html, body { margin:0; padding:0; }
+    body{
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.6;
+      font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      /* Fluid body size: min 16px, scale with viewport, cap ~18px */
+      font-size: clamp(1rem, 0.9rem + 0.3vw, 1.125rem);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Hero banner */
+    header{
+      background: linear-gradient(120deg, var(--band-a) 0%, var(--band-b) 100%);
+      color:#fff;
+      text-align:center;
+      padding: clamp(48px, 8vw, 96px) 20px;
+    }
+    header h1{
+      margin:0;
+      font-weight:400;
+      /* min 28px, scales with vw, max 40px */
+      font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+      letter-spacing: 0.01em;
+    }
+    header h2{
+      margin: 0.4em 0 0;
+      font-weight:300;
+      /* min 22px, scales, max 32px */
+      font-size: clamp(1.375rem, 2.5vw, 2rem);
+    }
+
+    /* Content container */
+    main{
+      max-width: var(--maxw);
+      margin: clamp(24px, 5vw, 48px) auto;
+      padding: 0 20px 56px;
+    }
+
+    /* Photo block: fluid with sensible cap */
+    .photo{
+      display:flex;
+      justify-content:center;
+      margin-bottom: clamp(20px, 5vw, 40px);
+    }
+    .photo img{
+      width: clamp(200px, 45vw, 380px); /* scales on small screens, caps near 380px like your Site */
+      height:auto;
+      border-radius: 6px;
+      display:block;
+    }
+
+    p{ margin: 0 0 1.1em; }
+
+    hr{
+      border:0;
+      border-top:1px solid #ddd;
+      margin: 32px 0;
+    }
+
+    /* Slightly looser line length on large screens */
+    @media (min-width: 1200px){
+      :root { --maxw: 78ch; }
+    }
+
+    /* Print: remove banner color (browsers often skip backgrounds), keep clean text */
+    @media print{
+      header{
+        background: none !important;
+        color:#000;
+        padding: 24px 0 12px;
+        border-bottom: 1px solid #ccc;
+      }
+      main{ padding: 0 0 0; }
+      .photo img{ max-width: 320px; }
+      a[href]:after{ content:" (" attr(href) ")"; font-size: 0.9em; }
+    }
+
+    /* Lightbox overlay */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      animation: fadeIn 0.3s ease;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    #lightbox:target {
+      display: flex;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>In Loving Memory of</h1>
+    <h2>Ture Kenneth Gustafson</h2>
+  </header>
+
+  <main>
+  <div class="photo">
+    <a href="#lightbox">
+      <img src="ken.jpg" alt="Ture Kenneth Gustafson">
+    </a>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox">
+    <a href="#">
+      <img src="ken.jpg" alt="Ture Kenneth Gustafson full-size">
+    </a>
+  </div>
+
+
+    <p><strong>Ture Kenneth Gustafson</strong>, known as Ken, Professor Emeritus of Electrical Engineering and Computer Sciences at the University of California, Berkeley, passed away peacefully at home on October 29, 2025, at the age of 85, following a lengthy battle with cancer. His son Ryan and his wife Corinne were at his side.</p>
+
+    <p>Born in Rossland, British Columbia, Canada, the youngest of three children of recently immigrated Swedish parents, Ken spent his childhood hiking in the hills and fishing in the creeks. He attended J. Lloyd High School, where his varied activities included the Honors Club and playing guitar in a band.</p>
+
+    <p>Ken received his Bachelor’s and Master’s degrees in Electrical Engineering from the University of British Columbia (UBC) in Vancouver in 1964. In July 1965, he married Corinne (nee Brierley), and in 1968, he received his Ph.D. in Electrical Engineering from the Massachusetts Institute of Technology (MIT) in Cambridge, Massachusetts. Even during his MIT years, he consulted for Lincoln Laboratory, an early sign of the blend of curiosity and practical engagement that would mark his career. Following his graduation, Charles H. Townes, with whom he had been working at MIT, suggested he apply for a position at the University of California, Berkeley, where he became Professor of Electrical Engineering and Computer Sciences and remained until his retirement in 2012, when he was honored with the title of Professor Emeritus.</p>
+
+    <p>Ken’s research explored nonlinear optical light-pulse propagation, phenomena such as self-phase modulation, self-steepening of light pulses, and the behavior of optical devices, as well as related quantum and semiconductor effects. His work reflected a lifelong curiosity about how light and matter interact, and he supervised many Ph.D. students whose dissertations advanced research in quantum wells, fiber communication, and nonlinear optics. His research legacy lives on not only through his publications and patents but also through the generations of students he guided, many of whom pursued leading-edge research in optoelectronics.</p>
+
+    <p>Over the course of his career, he spent sabbatical leaves at Bell Laboratories in New Jersey, the National Aeronautics and Space Administration (NASA Ames) in Palo Alto, the Office National d’Études et de Recherches Aérospatiales (ONERA) in Palaiseau, France, and the Communications Research Laboratory (CRL) in Koganei, Tokyo, Japan, continuing to build international collaborations in optical science.</p>
+
+    <p>He later taught classes in Oxford, England, and served as a guest lecturer and visiting researcher at the KTH Royal Institute of Technology in Stockholm, Sweden. These years abroad deepened not only his research but also his appreciation for the communities that welcomed him; colleagues and students from many countries, drawn together by shared curiosity and the pursuit of discovery.</p>
+
+    <p>He was elected a Fellow of the Optical Society of America (now Optica) in 1980, a Fellow of the Institute of Electrical and Electronics Engineers (IEEE) in 1991, and was also a member of the American Physical Society (APS).</p>
+
+    <p>In his community, he was a member of the Community Emergency Response Team (CERT) and the American Radio Relay League (ARRL). He and his son Ture learned emergency procedures and radio communication together, studying the codes, taking the exams, and earning their certifications side by side, an expression of Ken’s belief in learning by doing and in sharing knowledge through connection. He and his son Ryan entered running and biking events together, always as a team, and those shared experiences, physical, lighthearted, and quietly bonding, became deeply meaningful to them both.</p>
+
+    <p>As an avid hiker and cyclist, he enjoyed his hiking groups in the French Pyrenees and the Canadian Rockies and his daily cycling in the Berkeley and El Cerrito hills. In retirement, he enjoyed attending seminars and concerts at UC Berkeley and following research updates</p>
+
+    <p>Ken lived a life rich in curiosity, learning, and quiet dedication to science and family. A loving husband and father, he played many roles as his sons were growing up: President, at-home teacher, and fellow student of Suzuki violin; Dad’s Club at El Monte; and hockey coach at the Berkeley Minor Hockey Club. Ken grew up with a love of hockey typical of his Swedish-Canadian heritage. A professor by day, he played Senior hockey for Berkeley and in tournaments with Charles Schulz at his arena in Santa Rosa.</p>
+
+    <p>Ken carried that same spirit of curiosity and connection into every part of his life, the kind that makes someone pause, look up, and take in the world around them. He taught that not through words, but through example: steady, thoughtful, fully present.</p>
+
+    <p>Ken was predeceased by his parents, Anna Matilda (nee Haroldson) Gustafson and Ture Gunner Gustafson, and by his brother Karl Gustafson. He is survived by his sister Karen Gustafson; his wife of 60 years, Corinne Ann Gustafson; and his sons, David Ture Gustafson and Ryan Kenneth Gustafson. He is also lovingly remembered by his mother’s family in Sweden and by the many Brierleys of Canada, who welcomed him as one of their own, a source of warmth and connection that sustained him throughout his life.</p>
+
+    <p>In accordance with his wishes, no public services will be held. A private family gathering will take place at a later time. Friends and family are invited to raise a glass in Ken’s honor and reflect on a life well lived. He will be remembered as a gentle spirit with an unwavering love for his work and those closest to him. His legacy lives on through the lives he touched, his research, and his decades of teaching at UC Berkeley.</p>
+  </main>
+</body>
+</html>
